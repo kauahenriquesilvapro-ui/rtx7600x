@@ -3570,3 +3570,97 @@ document.addEventListener(
 
     }
 );
+/* =========================================================
+   CONDIÇÕES COMERCIAIS
+   ANIMAÇÃO DOS CARDS
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const businessTerms =
+            document.querySelector(
+                "#condicoes"
+            );
+
+
+        if (!businessTerms) {
+
+            return;
+
+        }
+
+
+        businessTerms
+            .classList
+            .add(
+                "js-ready"
+            );
+
+
+        const showBusinessTerms =
+            () => {
+
+                businessTerms
+                    .classList
+                    .add(
+                        "is-visible"
+                    );
+
+            };
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const businessObserver =
+                new IntersectionObserver(
+
+                    entries => {
+
+                        entries.forEach(
+
+                            entry => {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    showBusinessTerms();
+
+
+                                    businessObserver
+                                        .disconnect();
+
+                                }
+
+                            }
+
+                        );
+
+                    },
+
+                    {
+                        threshold: .18
+                    }
+
+                );
+
+
+            businessObserver.observe(
+                businessTerms
+            );
+
+        }
+
+        else {
+
+            showBusinessTerms();
+
+        }
+
+    }
+);
