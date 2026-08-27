@@ -4783,3 +4783,2785 @@ body.nexus-intro-locked #header {
     }
 
 }
+
+/* =========================================================
+   NEXUS RTX 7600 XT
+   SISTEMA MULTI-PÁGINA
+   ADICIONE NO FINAL DO STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS EXTRAS
+========================================================= */
+
+:root {
+    --nx-red: #ff2020;
+    --nx-red-dark: #980000;
+    --nx-black: #030303;
+    --nx-dark: #070707;
+    --nx-card: #0b0b0b;
+    --nx-card-2: #101010;
+    --nx-text: #ffffff;
+    --nx-muted: #777777;
+    --nx-border: rgba(255, 255, 255, .08);
+}
+
+
+
+/* =========================================================
+   CONFIGURAÇÃO DAS PÁGINAS
+========================================================= */
+
+.mp-page {
+    min-height: 100vh;
+    background: #030303;
+    color: white;
+}
+
+.mp-page section {
+    position: relative;
+}
+
+.mp-page h1,
+.mp-page h2,
+.mp-page h3,
+.mp-page strong {
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* =========================================================
+   HEADER MULTI-PÁGINA
+========================================================= */
+
+.mp-header {
+    background: rgba(3, 3, 3, .78) !important;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.mp-header nav a {
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.mp-header nav a:hover {
+    transform: translateY(-2px);
+}
+
+.mp-header nav a.active {
+    color: white;
+}
+
+.mp-header nav a.active::after {
+    width: 100%;
+    box-shadow:
+        0 0 8px rgba(255, 32, 32, .8),
+        0 0 20px rgba(255, 32, 32, .35);
+}
+
+
+
+/* =========================================================
+   HERO INTERNO DAS PÁGINAS
+========================================================= */
+
+.mp-page-hero {
+    position: relative;
+
+    min-height: 78vh;
+
+    padding:
+        170px
+        8%
+        100px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(255, 0, 0, .12),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #030303 0%,
+            #070707 100%
+        );
+}
+
+
+.mp-page-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -3;
+
+    opacity: .12;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, .08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, .08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        75px
+        75px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            black 65%,
+            transparent
+        );
+}
+
+
+.mp-page-orb {
+    position: absolute;
+
+    right: 5%;
+    top: 50%;
+
+    width: 540px;
+    height: 540px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    z-index: -2;
+}
+
+
+.mp-page-orb::before,
+.mp-page-orb::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+
+.mp-page-orb::before {
+
+    inset: 65px;
+
+    border:
+        1px dashed
+        rgba(255, 32, 32, .17);
+
+    animation:
+        mpOrbit
+        18s
+        linear
+        infinite;
+}
+
+
+.mp-page-orb::after {
+
+    inset: 145px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 0, 0, .17),
+            transparent 68%
+        );
+
+    filter:
+        blur(20px);
+}
+
+
+@keyframes mpOrbit {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+
+.mp-page-hero-inner {
+    max-width: 1000px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.mp-page-hero h1 {
+
+    max-width: 1100px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            62px,
+            9vw,
+            140px
+        );
+
+    font-weight: 900;
+
+    line-height: .86;
+
+    letter-spacing: -5px;
+}
+
+
+.mp-page-hero h1 span {
+
+    display: block;
+
+    margin-top: 15px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px
+        rgba(255, 255, 255, .65);
+
+    font-size: .53em;
+
+    letter-spacing: 1px;
+}
+
+
+.mp-page-hero-inner > p:not(.red-title) {
+
+    max-width: 650px;
+
+    margin-top: 40px;
+
+    color: #808080;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   TAG DO HERO
+========================================================= */
+
+.mp-route-tag {
+
+    width: max-content;
+
+    max-width: 100%;
+
+    margin-top: 36px;
+
+    padding:
+        13px
+        18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #aaa;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .09);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-route-tag i {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--nx-red);
+
+    box-shadow:
+        0 0 15px
+        var(--nx-red);
+
+    animation:
+        mpPulse
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes mpPulse {
+
+    50% {
+        opacity: .35;
+
+        box-shadow:
+            0 0 4px
+            var(--nx-red);
+    }
+
+}
+
+
+
+/* =========================================================
+   KPIs
+========================================================= */
+
+.mp-kpi-strip {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    background:
+        #060606;
+
+    border-top:
+        1px solid
+        var(--nx-border);
+
+    border-bottom:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-kpi-strip > div {
+
+    position: relative;
+
+    min-height: 185px;
+
+    padding:
+        45px
+        35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px solid
+        var(--nx-border);
+
+    overflow: hidden;
+}
+
+
+.mp-kpi-strip > div:last-child {
+    border-right: 0;
+}
+
+
+.mp-kpi-strip > div::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        var(--nx-red);
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
+
+    transition:
+        transform
+        .5s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        );
+}
+
+
+.mp-kpi-strip > div:hover::before {
+    transform:
+        scaleX(1);
+}
+
+
+.mp-kpi-strip > div:hover {
+    background:
+        #0a0a0a;
+}
+
+
+.mp-kpi-strip strong {
+
+    color: white;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            43px
+        );
+}
+
+
+.mp-kpi-strip span {
+
+    margin-top: 12px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   CABEÇALHO DE SEÇÃO
+========================================================= */
+
+.mp-section-head {
+
+    max-width: 920px;
+
+    margin-bottom: 75px;
+}
+
+
+.mp-section-head h2 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            85px
+        );
+
+    line-height: .96;
+
+    font-weight: 800;
+}
+
+
+.mp-section-head h2 span {
+
+    display: block;
+
+    color:
+        var(--nx-red);
+}
+
+
+.mp-section-head > p:last-child {
+
+    max-width: 680px;
+
+    margin-top: 28px;
+
+    color: #777;
+
+    line-height: 1.85;
+
+    font-size: 15px;
+}
+
+
+
+/* =========================================================
+   CARDS DAS ROTAS
+========================================================= */
+
+.mp-routes {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #090909
+        );
+}
+
+
+.mp-route-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 1px;
+
+    background:
+        var(--nx-border);
+
+    border:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-route-card {
+
+    position: relative;
+
+    min-height: 315px;
+
+    padding:
+        36px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        #070707;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+}
+
+
+.mp-route-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 0, 0, .08);
+
+    filter:
+        blur(35px);
+
+    opacity: 0;
+
+    transition:
+        opacity .4s ease;
+}
+
+
+.mp-route-card:hover {
+
+    z-index: 2;
+
+    transform:
+        translateY(-6px);
+
+    background:
+        #0c0c0c;
+}
+
+
+.mp-route-card:hover::before {
+    opacity: 1;
+}
+
+
+.mp-route-card small {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-route-card h3 {
+
+    margin-top: 65px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 20px;
+}
+
+
+.mp-route-card p {
+
+    max-width: 330px;
+
+    margin-top: 18px;
+
+    color: #686868;
+
+    line-height: 1.75;
+
+    font-size: 14px;
+}
+
+
+.mp-route-card > span {
+
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    color: white;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.mp-route-card:hover > span {
+
+    color:
+        var(--nx-red);
+
+    transform:
+        translateX(6px);
+}
+
+
+
+/* =========================================================
+   BLOCO DE AVISO / RESUMO
+========================================================= */
+
+.mp-note-section {
+
+    padding:
+        120px
+        8%;
+
+    background:
+        #050505;
+}
+
+
+.mp-note-card {
+
+    position: relative;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        70px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .09);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(255, 0, 0, .10),
+            transparent 35%
+        ),
+
+        #090909;
+}
+
+
+.mp-note-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background:
+        var(--nx-red);
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 0, 0, .6);
+}
+
+
+.mp-note-card > span {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+.mp-note-card h2 {
+
+    max-width: 900px;
+
+    margin-top: 22px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            70px
+        );
+
+    line-height: 1;
+}
+
+
+.mp-note-card h2 b {
+
+    display: block;
+
+    color:
+        var(--nx-red);
+}
+
+
+.mp-note-card p {
+
+    max-width: 800px;
+
+    margin-top: 30px;
+
+    color: #747474;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+
+/* =========================================================
+   PRODUÇÃO / SUPPLY CHAIN
+========================================================= */
+
+.mp-supply {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #070707;
+}
+
+
+.mp-supply-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    border-top:
+        1px solid
+        var(--nx-border);
+
+    border-left:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-supply-card {
+
+    min-height: 340px;
+
+    padding:
+        36px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-right:
+        1px solid
+        var(--nx-border);
+
+    border-bottom:
+        1px solid
+        var(--nx-border);
+
+    transition:
+        .4s ease;
+}
+
+
+.mp-supply-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        #0d0d0d;
+}
+
+
+.mp-supply-card small {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+}
+
+
+.mp-supply-card h3 {
+
+    margin-top: 60px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 18px;
+}
+
+
+.mp-supply-card p {
+
+    margin-top: 20px;
+
+    color: #686868;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.mp-supply-card em {
+
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    font-style: normal;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* =========================================================
+   MARGEM 40%
+========================================================= */
+
+.mp-margin-section {
+
+    padding:
+        130px
+        8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(255, 0, 0, .08),
+            transparent 35%
+        ),
+        #070707;
+}
+
+
+.mp-margin-card {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        65px;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.mp-margin-title h2 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            80px
+        );
+
+    line-height: .95;
+}
+
+
+.mp-margin-title h2 span {
+
+    display: block;
+
+    color:
+        var(--nx-red);
+}
+
+
+.mp-formula {
+
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr
+        auto
+        1.2fr;
+
+    gap: 22px;
+
+    align-items: center;
+}
+
+
+.mp-formula > div {
+
+    min-height: 150px;
+
+    padding:
+        25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #090909;
+}
+
+
+.mp-formula span {
+
+    color: #626262;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-formula strong {
+
+    margin-top: 12px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            39px
+        );
+}
+
+
+.mp-formula > b {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 20px;
+}
+
+
+.mp-formula-result {
+
+    border-color:
+        rgba(255, 32, 32, .5) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 0, 0, .15),
+            #090909
+        ) !important;
+}
+
+
+.mp-formula-result strong {
+
+    color:
+        var(--nx-red);
+
+    font-size:
+        clamp(
+            35px,
+            5vw,
+            65px
+        );
+}
+
+
+.mp-formula-text {
+
+    margin-top: 30px;
+
+    color: #777;
+
+    text-align: center;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   GRID FINANCEIRO
+========================================================= */
+
+.mp-financial-grid-section {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #070707;
+}
+
+
+.mp-financial-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 20px;
+}
+
+
+.mp-fin-card {
+
+    position: relative;
+
+    min-height: 300px;
+
+    padding:
+        35px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #090909;
+
+    transition:
+        .4s ease;
+}
+
+
+.mp-fin-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255, 32, 32, .45);
+}
+
+
+.mp-fin-card > span {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        34px;
+
+    font-weight: 800;
+}
+
+
+.mp-fin-card h3 {
+
+    margin-top: 45px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 16px;
+}
+
+
+.mp-fin-card strong {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: white;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 24px;
+}
+
+
+.mp-fin-card p {
+
+    margin-top: 20px;
+
+    color: #666;
+
+    line-height: 1.75;
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================================
+   ESTRATÉGIA
+========================================================= */
+
+.mp-strategy-section {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #070707;
+}
+
+
+.mp-strategy-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 20px;
+}
+
+
+.mp-strategy-card {
+
+    min-height: 340px;
+
+    padding:
+        40px;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #090909;
+
+    transition:
+        .4s ease;
+}
+
+
+.mp-strategy-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(255, 32, 32, .4);
+
+    background:
+        #0d0d0d;
+}
+
+
+.mp-strategy-card > span {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+.mp-strategy-card h3 {
+
+    margin-top: 80px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 22px;
+}
+
+
+.mp-strategy-card p {
+
+    margin-top: 22px;
+
+    color: #686868;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================================
+   CAC
+========================================================= */
+
+.mp-cac-section {
+
+    padding:
+        140px
+        8%;
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 0, 0, .07),
+            transparent 33%
+        ),
+
+        #050505;
+}
+
+
+.mp-cac-content h2 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            110px
+        );
+
+    line-height: .9;
+}
+
+
+.mp-cac-content h2 span {
+
+    display: block;
+
+    color:
+        var(--nx-red);
+
+    font-size: .55em;
+}
+
+
+.mp-cac-content > p:last-child {
+
+    max-width: 540px;
+
+    margin-top: 30px;
+
+    color: #777;
+
+    line-height: 1.9;
+}
+
+
+.mp-cac-card {
+
+    padding:
+        45px;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #090909;
+}
+
+
+.mp-cac-card > span {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+.mp-cac-formula {
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr
+        auto
+        1fr;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+.mp-cac-formula > div {
+
+    min-height: 130px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #060606;
+}
+
+
+.mp-cac-formula small {
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.mp-cac-formula strong {
+
+    margin-top: 12px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 25px;
+}
+
+
+.mp-cac-formula > b {
+
+    color:
+        var(--nx-red);
+
+    font-size: 22px;
+}
+
+
+.mp-cac-result {
+
+    border-color:
+        rgba(255, 32, 32, .45) !important;
+}
+
+
+.mp-cac-result strong {
+
+    color:
+        var(--nx-red);
+}
+
+
+
+/* =========================================================
+   MARKETING
+========================================================= */
+
+.mp-marketing-section {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #080808;
+}
+
+
+.mp-marketing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 1px;
+
+    background:
+        var(--nx-border);
+
+    border:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-marketing-card {
+
+    min-height: 320px;
+
+    padding:
+        35px;
+
+    background:
+        #070707;
+
+    transition:
+        background .4s ease;
+}
+
+
+.mp-marketing-card:hover {
+    background:
+        #101010;
+}
+
+
+.mp-marketing-card small {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+}
+
+
+.mp-marketing-card h3 {
+
+    margin-top: 75px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 16px;
+}
+
+
+.mp-marketing-card p {
+
+    margin-top: 22px;
+
+    color: #676767;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   GESTÃO DE RISCOS
+========================================================= */
+
+.mp-risk-section {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #050505;
+}
+
+
+.mp-risk-table {
+
+    max-width: 1300px;
+}
+
+
+.mp-risk-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        .7fr
+        .7fr
+        1.5fr;
+
+    border-top:
+        1px solid
+        var(--nx-border);
+
+    transition:
+        .3s ease;
+}
+
+
+.mp-risk-row:last-child {
+
+    border-bottom:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-risk-row:hover {
+
+    padding-left: 8px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.mp-risk-row > div {
+
+    min-height: 115px;
+
+    padding:
+        25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-risk-row > div:first-child {
+
+    border-left:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-risk-row span {
+
+    color:
+        var(--nx-red);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-risk-row strong {
+
+    margin-top: 10px;
+
+    color: #d5d5d5;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+
+/* =========================================================
+   PRÓXIMA PÁGINA
+========================================================= */
+
+.mp-next-page {
+
+    padding:
+        85px
+        8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 0, 0, .10),
+            transparent 25%
+        ),
+
+        #080808;
+
+    border-top:
+        1px solid
+        var(--nx-border);
+
+    border-bottom:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-next-page h2 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            55px
+        );
+}
+
+
+.mp-next-page > div > p:last-child {
+
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   BUSINESS TERMS
+   CORREÇÕES MULTI-PÁGINA
+========================================================= */
+
+.mp-page .business-terms {
+
+    padding:
+        145px
+        8%;
+
+    background:
+        #070707;
+}
+
+
+.mp-page .business-terms-header {
+
+    max-width: 950px;
+
+    margin-bottom: 70px;
+}
+
+
+.mp-page .business-terms-title h2 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            82px
+        );
+
+    line-height: .95;
+}
+
+
+.mp-page .business-terms-title h2 span {
+
+    display: block;
+
+    color:
+        var(--nx-red);
+}
+
+
+.mp-page .business-terms-title > p:last-child {
+
+    max-width: 700px;
+
+    margin-top: 25px;
+
+    color: #707070;
+
+    line-height: 1.85;
+}
+
+
+.mp-page .business-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 18px;
+}
+
+
+.mp-page .business-card {
+
+    min-height: 390px;
+
+    padding:
+        35px;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #090909;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease;
+}
+
+
+.mp-page .business-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255, 32, 32, .4);
+}
+
+
+.mp-page .business-card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.mp-page .business-card-number {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+.mp-page .business-card-tag {
+
+    padding:
+        7px
+        10px;
+
+    color: #777;
+
+    border:
+        1px solid
+        var(--nx-border);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.mp-page .business-card-label {
+
+    margin-top: 60px;
+
+    color:
+        var(--nx-red);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-page .business-card h3 {
+
+    margin-top: 12px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 18px;
+}
+
+
+.mp-page .business-main-value {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+}
+
+
+.mp-page .business-main-value strong {
+
+    color: white;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 58px;
+}
+
+
+.mp-page .business-main-value span {
+
+    color:
+        var(--nx-red);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 20px;
+}
+
+
+.mp-page .business-card-description {
+
+    margin-top: 20px;
+
+    color: #666;
+
+    line-height: 1.75;
+
+    font-size: 13px;
+}
+
+
+.mp-page .payment-rates {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 8px;
+}
+
+
+.mp-page .payment-rate {
+
+    padding:
+        14px
+        8px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--nx-border);
+}
+
+
+.mp-page .payment-rate span {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 8px;
+}
+
+
+.mp-page .payment-rate strong {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: white;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+}
+
+
+.mp-page .business-terms-note {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.mp-page .business-terms-note > span {
+
+    width: 30px;
+    height: 1px;
+
+    background:
+        var(--nx-red);
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.mp-page footer {
+
+    min-height: 150px;
+
+    padding:
+        40px
+        8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid
+        var(--nx-border);
+
+    background:
+        #030303;
+}
+
+
+.mp-page footer p {
+
+    color: #444;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* =========================================================
+   ANIMAÇÕES AO ROLAR
+========================================================= */
+
+.mp-reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+
+        opacity
+        .8s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        ),
+
+        transform
+        .8s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        );
+}
+
+
+.mp-reveal.mp-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+
+/* =========================================================
+   EFEITO DE ENTRADA DA PÁGINA
+========================================================= */
+
+body.mp-page {
+
+    animation:
+        mpPageEntrance
+        .55s
+        ease
+        both;
+}
+
+
+@keyframes mpPageEntrance {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVO - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+
+    .mp-route-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .mp-supply-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .mp-marketing-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .mp-financial-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .mp-cac-section {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .mp-formula {
+
+        grid-template-columns:
+            1fr
+            auto
+            1fr;
+
+    }
+
+
+    .mp-formula-result {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .mp-formula > b:nth-of-type(2) {
+        display: none;
+    }
+
+
+    .mp-risk-row {
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVO - MENU
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+    .mp-header {
+
+        padding:
+            0
+            5%;
+    }
+
+
+    .mp-header nav {
+
+        position: fixed;
+
+        left: 0;
+        top: 80px;
+
+        width: 100%;
+
+        padding:
+            30px
+            6%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        background:
+            rgba(4, 4, 4, .98);
+
+        border-bottom:
+            1px solid
+            var(--nx-border);
+
+        transform:
+            translateY(-130%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            .35s ease;
+    }
+
+
+    .mp-header nav.open {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    .mp-header nav a {
+
+        width: 100%;
+
+        padding:
+            18px
+            0;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, .05);
+
+        font-size: 11px;
+    }
+
+
+    .mp-header nav a::after {
+        bottom: 8px;
+    }
+
+
+    .mp-header .menu-btn {
+        display: block;
+    }
+
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVO - CELULAR
+========================================================= */
+
+@media (max-width: 750px) {
+
+
+    .mp-page-hero {
+
+        min-height: 75vh;
+
+        padding:
+            145px
+            6%
+            80px;
+    }
+
+
+    .mp-page-hero h1 {
+
+        font-size:
+            clamp(
+                48px,
+                15vw,
+                80px
+            );
+
+        letter-spacing: -3px;
+    }
+
+
+    .mp-page-hero h1 span {
+        font-size: .48em;
+    }
+
+
+    .mp-page-orb {
+
+        width: 370px;
+        height: 370px;
+
+        right: -180px;
+
+        opacity: .6;
+    }
+
+
+    .mp-route-tag {
+
+        line-height: 1.5;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .mp-kpi-strip {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .mp-kpi-strip > div {
+
+        min-height: 145px;
+
+        padding:
+            28px
+            20px;
+
+        border-bottom:
+            1px solid
+            var(--nx-border);
+    }
+
+
+    .mp-route-grid,
+    .mp-financial-grid,
+    .mp-strategy-grid,
+    .mp-supply-grid,
+    .mp-marketing-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .mp-routes,
+    .mp-supply,
+    .mp-strategy-section,
+    .mp-marketing-section,
+    .mp-risk-section,
+    .mp-financial-grid-section {
+
+        padding:
+            100px
+            6%;
+    }
+
+
+    .mp-note-section {
+
+        padding:
+            80px
+            6%;
+    }
+
+
+    .mp-note-card {
+
+        padding:
+            45px
+            30px;
+    }
+
+
+    .mp-margin-section {
+
+        padding:
+            90px
+            6%;
+    }
+
+
+    .mp-margin-card {
+
+        padding:
+            40px
+            25px;
+    }
+
+
+    .mp-formula {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+
+    .mp-formula > b {
+
+        text-align: center;
+    }
+
+
+    .mp-formula > b:nth-of-type(2) {
+        display: block;
+    }
+
+
+    .mp-formula-result {
+        grid-column: auto;
+    }
+
+
+    .mp-cac-section {
+
+        padding:
+            100px
+            6%;
+
+        gap: 50px;
+    }
+
+
+    .mp-cac-card {
+        padding: 30px 20px;
+    }
+
+
+    .mp-cac-formula {
+
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+    }
+
+
+    .mp-risk-row {
+
+        margin-bottom: 20px;
+
+        grid-template-columns:
+            1fr;
+
+        border:
+            1px solid
+            var(--nx-border);
+    }
+
+
+    .mp-risk-row > div {
+
+        min-height: auto;
+
+        padding:
+            20px;
+
+        border: 0;
+
+        border-bottom:
+            1px solid
+            var(--nx-border);
+    }
+
+
+    .mp-risk-row > div:first-child {
+        border-left: 0;
+    }
+
+
+    .mp-risk-row > div:last-child {
+        border-bottom: 0;
+    }
+
+
+    .mp-next-page {
+
+        padding:
+            65px
+            6%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .mp-page .business-terms {
+
+        padding:
+            100px
+            6%;
+    }
+
+
+    .mp-page .business-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .mp-page footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            45px
+            6%;
+    }
+
+
+}
+
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+    .mp-page-hero h1 {
+
+        font-size:
+            clamp(
+                42px,
+                14vw,
+                65px
+            );
+    }
+
+
+    .mp-page-hero-inner > p:not(.red-title) {
+        font-size: 14px;
+    }
+
+
+    .mp-kpi-strip {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .mp-kpi-strip > div {
+        border-right: 0;
+    }
+
+
+    .mp-note-card h2 {
+        font-size: 34px;
+    }
+
+
+    .mp-route-card {
+        min-height: 280px;
+    }
+
+
+}
+
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mp-reveal,
+    .mp-page,
+    .mp-page-orb::before,
+    .mp-route-tag i {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+
+    .mp-reveal {
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
